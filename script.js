@@ -400,8 +400,11 @@ btnClose.addEventListener('click', function (e) {
 let sorted = false;
 btnSort.addEventListener('click', function (e) {
   e.preventDefault();
-  displayMovements(currentAccount.acc.movements, !sorted);
+  displayMovements(currentAccount, !sorted);
   sorted = !sorted;
+
+  clearInterval(timer);
+  timer = startLogOutTimer();
 });
 
 /////////////////////////////////////////////////
